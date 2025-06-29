@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "circo",
+    "nombre": "Circo",
+    "portada": "/portadas/circus.png"
+  },
+  {
+    "slug": "malabares",
+    "nombre": "Malabares",
+    "portada": "/portadas/BellezaIcon.jpg"
+  },
+  {
+    "slug": "aereos",
+    "nombre": "Aereos",
+    "portada": "/portadas/AlimentosIcon.jpg"
+  },
+   {
+    "slug": "musica",
+    "nombre": "Música",
+    "portada": "/portadas/TecnologiaIcon.jpg"
+  }
+]

@@ -1,0 +1,82 @@
+.categoria-container {
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Georgia', serif;
+  background-image: url("../assets/fondo_categoria_indigo.jpg"); /* usa un fondo artístico acorde */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #e8dff5;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.categoria-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 14, 40, 0.7); /* velo místico violeta */
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+.categoria-container h1 {
+  font-size: 3.8rem;
+  color: #d4bfff;
+  text-shadow:
+    0 0 4px #5e548e,
+    0 0 10px #9f86c0;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 2px solid #a489c8;
+  border-radius: 1rem;
+  width: 260px;
+  padding: 1rem;
+  text-decoration: none;
+  color: #f2e9f7;
+  box-shadow: 0 4px 10px rgba(80, 70, 120, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.card:hover {
+  background-color: rgba(197, 164, 255, 0.2);
+  box-shadow: 0 6px 16px rgba(161, 122, 250, 0.4);
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #d8c4f7;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+  color: #dfd0f4;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #c7b0f3;
+  line-height: 1.4;
+}

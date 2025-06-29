@@ -1,0 +1,35 @@
+{
+  "safari-familiar": {
+    "nombre": "INDIGO EDUCATIVO",
+    "logo": "/logos/IndigoLogo.jpg",
+    "pdf": "/pdfs/Propuesta_Buen_Comienzo_2024.pdf",
+    "whatsapp": "https://wa.me/573182181887",
+    "instagram": "https://instagram.com/indigo_artistico/",
+    "categoria": "circo"
+  },
+ 
+  "Las delicias de MArgarita": {
+    "nombre": "Delicias Margarita",
+    "logo": "/logos/Bunueleria.jpg",
+    "pdf": "/PDFs/Bunueleria.pdf",
+    "whatsapp": "https://wa.me/573206536653",
+    "instagram": "https://instagram.com/bunueloslanavarra",
+    "categoria": "alimentos"
+  },
+  "mxPollo": {
+    "nombre": "MX Pollo",
+    "logo": "/logos/pollomx.jpg",
+    "pdf": "/PDFs/Pollomx.pdf",
+    "whatsapp": "https://wa.me/573128321287",
+    "instagram": "https://instagram.com/mxpollo",
+    "categoria": "alimentos"
+  },
+  "dmonts-food": {
+    "nombre": "Dmonts Food",
+    "logo": "/logos/Dmonts.jpg",
+    "pdf": "/PDFs/menuDmonts.pdf",
+    "whatsapp": "https://wa.me/573218936622",
+    "instagram": "https://instagram.com/heladeria",
+    "categoria": "alimentos"
+  }
+}

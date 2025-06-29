@@ -1,0 +1,102 @@
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  background-image: url("../assets/IndigoLogo.jpg"); /* reemplaza con tu fondo artístico */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f2e9e4;
+  z-index: 1;
+  font-family: 'Georgia', serif;
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 11, 40, 0.65); /* <- ESTA línea oscurece la imagen */
+  z-index: -1;
+}
+
+
+/* Banner */
+.banner {
+  background: rgba(44, 33, 89, 0.6);
+  padding: 2.5rem 1rem;
+  border-radius: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(199, 177, 255, 0.4);
+}
+
+.banner h1 {
+  color: #cdb4db;
+  text-shadow:
+    0 0 6px #b185d1,
+    0 0 10px #6a4c93;
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+/* Tarjetas */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.card {
+  background: #f3f0f9;
+  color: #2e1437;
+  border: 2px solid #ccc1d1;
+  border-radius: 1rem;
+  width: 220px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  box-shadow: 0 2px 8px rgba(74, 67, 103, 0.15);
+  font-family: 'Georgia', serif;
+}
+
+.card:hover {
+  background-color: #e0d4f7;
+  box-shadow: 0 6px 20px rgb(40, 3, 128);
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 1px solid #cbbccf;
+}
+
+/* Footer */
+.home-footer {
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #dcd6f7;
+  background-color: rgba(25, 20, 50, 0.8);
+  border-top: 2px solid #967bb6;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.home-footer a {
+  color: #e2b6ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.home-footer a:hover {
+  text-decoration: underline;
+  color: #fff1fb;
+}
