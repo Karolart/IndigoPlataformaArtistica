@@ -120,3 +120,45 @@
   color: #3e2a61;
   font-size: 0.75rem;
 }
+
+.pdf-viewer canvas {
+  transition: transform 0.3s ease-in-out;
+}
+
+.canvas-slide-left {
+  transform: translateX(-100%);
+}
+
+.canvas-slide-right {
+  transform: translateX(100%);
+}
+.page-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.page-indicator {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.page-slider {
+  width: 80%;
+  max-width: 300px;
+}
+
+.pdf-viewer canvas {
+  transition: transform 0.3s ease-in-out;
+}
+
+.canvas-slide-left {
+  transform: translateX(-100%);
+}
+
+.canvas-slide-right {
+  transform: translateX(100%);
+}
