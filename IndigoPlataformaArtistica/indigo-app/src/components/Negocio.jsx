@@ -3,8 +3,7 @@ import negocios from '../data/negocios.json';
 import { useEffect, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
 import pdfWorker from 'pdfjs-dist/build/pdf.worker?worker';
-import '../styles/negocio.css';
-
+import '../styles/Negocio.css';
 import whatsappIcon from '../assets/whatsapp.png';
 import instagramIcon from '../assets/instagram.png';
 import pdfIcon from '../assets/pdf.png';
