@@ -5,14 +5,20 @@ import "../styles/Categoria.css";
 function Categoria() {
   const { categoriaSlug } = useParams();
 
-  // Filtra negocios por categoría
   const negociosFiltrados = Object.entries(negocios)
     .filter(([_, negocio]) => negocio.categoria === categoriaSlug)
     .map(([slug, negocio]) => ({ slug, ...negocio }));
 
   return (
     <div className="categoria-container">
+      <div className="navigation-buttons">
+        <Link to="/" className="nav-button">Inicio</Link>
+      </div>
+
+
       <h1>{categoriaSlug.toUpperCase()}</h1>
+
+
       <div className="card-list">
         {negociosFiltrados.map((negocio) => (
           <Link key={negocio.slug} to={`/negocio/${negocio.slug}`} className="card">

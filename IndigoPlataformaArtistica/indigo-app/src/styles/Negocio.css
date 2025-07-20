@@ -3,18 +3,22 @@
   padding: 2rem;
   text-align: center;
   font-family: 'Playfair Display', serif;
-  color: #e3d0f7;
+  color: #ffffff; /* Texto blanco puro */
   text-shadow:
-    0 0 5px #5a4d7d,
-    0 0 10px #826bbf;
-  background-image: url("../assets/fondo_negocio_indigo.jpg"); /* fondo artístico para negocios */
+    0 0 6px #a488ff,
+    0 0 10px #cbb2ff;
+
+  background: radial-gradient(circle at 30% 30%, #3e1f66, #140c22 70%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(91, 71, 128, 0.3);
+  box-shadow: 0 4px 20px rgba(140, 110, 190, 0.5);
   overflow: hidden;
 }
+
+
 
 .negocio-container::before {
   content: "";
@@ -143,7 +147,7 @@
   margin: 5px 0;
   font-size: 14px;
   font-weight: bold;
-  color: #333;
+  color: #faf1f1;
 }
 
 .page-slider {
@@ -162,3 +166,29 @@
 .canvas-slide-right {
   transform: translateX(100%);
 }
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.nav-button.small {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #dfd0f4;
+  border: 1px solid #a489c8;
+  border-radius: 0.5rem;
+  font-family: 'Georgia', serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-button.small:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 6px #a489c8;
+}
+

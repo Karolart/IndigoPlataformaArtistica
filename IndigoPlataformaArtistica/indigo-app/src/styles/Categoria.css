@@ -2,7 +2,7 @@
   padding: 2rem;
   min-height: 100vh;
   font-family: 'Georgia', serif;
-  background-image: url("../assets/fondo_categoria_indigo.jpg"); /* usa un fondo artístico acorde */
+  background-image: url("../assets/IndigoLogo.jpg"); /* usa un fondo artístico acorde */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,10 +53,17 @@
 }
 
 .card:hover {
-  background-color: rgb(42, 1, 114);
-  box-shadow: 0 6px 16px rgb(30, 3, 92);
-  transform: translateY(-4px);
+  background: linear-gradient(145deg, #2c1a47, #3c2163);
+  color: white;
+  border: 1px solid #9b79d3;
+  box-shadow:
+    0 0 12px rgba(139, 111, 202, 0.6),
+    inset 0 0 10px rgba(255, 255, 255, 0.03),
+    inset 0 0 20px rgba(180, 150, 255, 0.06),
+    0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
 }
+
 
 .card img {
   width: 100%;
@@ -79,4 +86,27 @@
   font-size: 0.95rem;
   color: #c7b0f3;
   line-height: 1.4;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.nav-button {
+  background-color: #6a4caf;
+  color: #f8f1ff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #d2b7ff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #4c2e91;
+  transform: scale(1.05);
 }

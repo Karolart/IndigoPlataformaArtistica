@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // 👈 IMPORTACIÓN AÑADIDA
 import negocios from '../data/negocios.json';
 import { useEffect, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
@@ -44,7 +44,6 @@ function Negocio() {
           };
           window.addEventListener("beforeunload", handleBeforeUnload);
 
-          // Clean up event
           return () => {
             window.removeEventListener("beforeunload", handleBeforeUnload);
           };
@@ -117,7 +116,6 @@ function Negocio() {
     }
   };
 
-  // Swipe para móviles
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -154,6 +152,7 @@ function Negocio() {
 
   return (
     <div className="negocio-container">
+    
       <img src={negocio.logo} alt={negocio.nombre} className="negocio-logo" />
       <h1>{negocio.nombre}</h1>
 
@@ -205,6 +204,12 @@ function Negocio() {
           </div>
         </a>
       </div>
+        {/* ✅ BOTONES DE NAVEGACIÓN AGREGADOS */}
+      <div className="navigation-buttons">
+        <Link to="/" className="nav-button">Inicio</Link>
+        <Link to={`/categoria/${negocio.categoria}`} className="nav-button">Volver</Link>
+      </div>
+
     </div>
   );
 }
