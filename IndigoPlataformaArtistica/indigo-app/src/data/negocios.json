@@ -1,5 +1,5 @@
 {
-  "IndigoEducativo": {
+  "IndigoEducativogit": {
     "nombre": "INDIGO EDUCATIVO",
     "logo": "/logos/IndigoLogo.jpg",
     "pdf": "/pdfs/Propuesta_Buen_Comienzo_2024.pdf",
@@ -8,13 +8,13 @@
     "categoria": "circo"
   },
  
-  "Las delicias de MArgarita": {
-    "nombre": "Delicias Margarita",
-    "logo": "/logos/Bunueleria.jpg",
-    "pdf": "/PDFs/Bunueleria.pdf",
+  "circuss": {
+    "nombre": "circo de las hermanas calle",
+    "logo": "/logos/circuss.jpg",
+    "pdf": "",
     "whatsapp": "https://wa.me/573206536653",
-    "instagram": "https://instagram.com/bunueloslanavarra",
-    "categoria": "alimentos"
+    "instagram": "",
+    "categoria": "circo"
   },
   "mxPollo": {
     "nombre": "MX Pollo",

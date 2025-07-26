@@ -2,11 +2,15 @@ import { Link } from "react-router-dom";
 import categorias from "../data/categorias.json";
 import "../styles/Home.css";
 import clickSound from "../assets/click.mp3";
-import indigoLogo from "../assets/Indigo_New_Logo.png"; // 👈 IMPORTACIÓN CORRECTA
-import { useRef } from "react";
+import IntroSound from "../assets/TiersenSound.mp3";
+import indigoLogo from "../assets/Indigo_New_Logo.png";
+import bannerGif from "../assets/bannerAnimado.gif"; // 👈 Importa el GIF
+import { useRef, useState } from "react";
 
 function Home() {
   const clickAudioRef = useRef(new Audio(clickSound));
+  const audioRef = useRef(new Audio(IntroSound));
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleClick = () => {
     const audio = clickAudioRef.current;
@@ -15,17 +19,42 @@ function Home() {
     audio.play();
   };
 
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    audio.volume = 0.4;
+    if (isPlaying) {
+      audio.pause();
+      audio.currentTime = 0;
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <div className="home-container">
-      <div className="banner">
-        <img src={indigoLogo} alt="Logo Indigo" className="banner-logo" />
+      <div
+        className="banner"
+        style={{
+          backgroundImage: isPlaying
+            ? `url(${bannerGif})`
+            : "linear-gradient(135deg, #1c1c1c, #3b3b3b)", // fondo por defecto
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <button
+          onClick={toggleAudio}
+          className="logo-button"
+          style={{ background: "none", border: "none", padding: 0 }}
+        >
+          <img src={indigoLogo} alt="Logo Indigo" className="banner-logo" />
+        </button>
         <div className="banner-text">
           <h1>Indigo</h1>
           <h3>Plataforma Artística</h3>
         </div>
       </div>
-
-
 
       <div className="card-list">
         {categorias.map((categoria) => (

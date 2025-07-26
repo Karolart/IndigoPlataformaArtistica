@@ -7,12 +7,12 @@
   {
     "slug": "malabares",
     "nombre": "Malabares",
-    "portada": "/portadas/BellezaIcon.jpg"
+    "portada": "/portadas/Malabares.png"
   },
   {
     "slug": "aereos",
     "nombre": "Aereos",
-    "portada": "/portadas/AlimentosIcon.jpg"
+    "portada": "/portadas/aereos.png"
   },
    {
     "slug": "musica",

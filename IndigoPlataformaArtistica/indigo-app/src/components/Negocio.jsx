@@ -1,14 +1,15 @@
-import { useParams, Link } from 'react-router-dom'; // 👈 IMPORTACIÓN AÑADIDA
+import { useParams, Link } from 'react-router-dom';
 import negocios from '../data/negocios.json';
 import { useEffect, useRef, useState } from 'react';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
-import pdfWorker from 'pdfjs-dist/build/pdf.worker?worker';
 import '../styles/Negocio.css';
 import whatsappIcon from '../assets/whatsapp.png';
 import instagramIcon from '../assets/instagram.png';
 import pdfIcon from '../assets/pdf.png';
 
-pdfjsLib.GlobalWorkerOptions.workerPort = new pdfWorker();
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
+
+// ✅ Use remote worker URL to avoid CORS issue
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/legacy/build/pdf.worker.min.js`;
 
 function Negocio() {
   const { slug } = useParams();
@@ -17,6 +18,7 @@ function Negocio() {
   const [pdfDoc, setPdfDoc] = useState(null);
   const [pageNum, setPageNum] = useState(1);
   const [transitionClass, setTransitionClass] = useState('');
+  const [zoomed, setZoomed] = useState(false);
 
   useEffect(() => {
     if (!negocio?.pdf) return;
@@ -67,7 +69,7 @@ function Negocio() {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
 
-        const scale = 1.0;
+        const scale = zoomed ? 2.0 : 1.0;
         const viewport = page.getViewport({ scale, rotation: page.rotate });
 
         canvas.height = viewport.height;
@@ -87,7 +89,7 @@ function Negocio() {
     return () => {
       if (renderTask) renderTask.cancel();
     };
-  }, [pdfDoc, pageNum]);
+  }, [pdfDoc, pageNum, zoomed]);
 
   const handlePageChange = (direction) => {
     if (!pdfDoc) return;
@@ -151,27 +153,32 @@ function Negocio() {
 
   return (
     <div className="negocio-container">
-    
       <img src={negocio.logo} alt={negocio.nombre} className="negocio-logo" />
       <h1>{negocio.nombre}</h1>
 
-      <div className="pdf-viewer">
+      <div
+        className={`pdf-viewer pdf-viewer-container ${zoomed ? 'zoomed' : ''}`}
+        onClick={() => setZoomed(prev => !prev)}
+        title="Haz clic para ampliar o reducir"
+      >
         <canvas ref={canvasRef} className={transitionClass}></canvas>
+      </div>
 
+      {pdfDoc && (
         <div className="page-controls">
           <div className="nav-buttons">
-            <button onClick={() => handlePageChange("prev")} className="hand-btn">👈</button>
-            <button onClick={() => handlePageChange("next")} className="hand-btn">👉</button>
+            <button onClick={(e) => { e.stopPropagation(); handlePageChange("prev"); }} className="hand-btn">👈</button>
+            <button onClick={(e) => { e.stopPropagation(); handlePageChange("next"); }} className="hand-btn">👉</button>
           </div>
 
           <div className="page-indicator">
-            Página {pageNum} de {pdfDoc?.numPages || "?"}
+            Página {pageNum} de {pdfDoc.numPages}
           </div>
 
           <input
             type="range"
             min="1"
-            max={pdfDoc?.numPages || 1}
+            max={pdfDoc.numPages}
             value={pageNum}
             onChange={(e) => {
               const newPage = Number(e.target.value);
@@ -179,9 +186,10 @@ function Negocio() {
               localStorage.setItem(`lastPage_${slug}`, newPage);
             }}
             className="page-slider"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
-      </div>
+      )}
 
       <div className="botones-contacto">
         <a href={negocio.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -203,12 +211,11 @@ function Negocio() {
           </div>
         </a>
       </div>
-        {/* ✅ BOTONES DE NAVEGACIÓN AGREGADOS */}
+
       <div className="navigation-buttons">
         <Link to="/" className="nav-button">Inicio</Link>
         <Link to={`/categoria/${negocio.categoria}`} className="nav-button">Volver</Link>
       </div>
-
     </div>
   );
 }

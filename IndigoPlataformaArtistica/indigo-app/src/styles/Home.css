@@ -31,50 +31,25 @@
 
 /* Banner */
 .banner {
-  background: rgba(44, 33, 89, 0.6);
-  padding: 2.5rem 1rem;
-  border-radius: 1.5rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  border: 4px solid rgba(199, 177, 255, 0.4);
-}
-
-.banner h1 {
-  color: #cdb4db;
-  text-shadow:
-    0 0 6px #b185d1,
-    0 0 10px #6a4c93;
-  font-size: 3.5rem;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-}
-
-.banner {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 1rem;
+  border-radius: 1.5rem;
+  margin-bottom: 2.5rem;
   background: linear-gradient(90deg, #2e004f 0%, #3f0071 100%);
-  padding: 20px 40px;
-  border-radius: 12px;
-  margin-bottom: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.banner-title {
-  font-size: 2.5rem;
-  color: white;
-  font-weight: bold;
-  flex: 1;
+  border: 4px solid rgba(199, 177, 255, 0.4);
 }
 
 .banner-logo {
   width: 250px;
   height: auto;
-  border: 4px solid #8a2be2; /* Índigo brillante */
-  border-radius: 12px;        /* Bordes redondeados opcionales */
-  box-shadow: 0 0 20px 6px rgba(138, 43, 226, 0.6); /* Efecto luminoso */
+  border: 4px solid #8a2be2;
+  border-radius: 12px;
+  box-shadow: 0 0 20px 6px rgba(138, 43, 226, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -83,34 +58,25 @@
   box-shadow: 0 0 25px 10px rgba(138, 43, 226, 0.8);
 }
 
-
-.banner {
-  position: relative;
-  height: 40vh;
-  background-color: #f5f5f5;
-  padding: 2rem;
-}
-
 .banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
+  max-width: none;
 }
 
 .banner-text h1 {
-  font-size: 3.5rem;
   color: #cdb4db;
+  text-shadow: 0 0 6px #b185d1, 0 0 10px #6a4c93;
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
   margin: 0;
 }
 
 .banner-text h3 {
   font-size: 1.8rem;
   color: #e0caff;
-  margin: 0.5rem 0 0;
+  margin-top: 0.5rem;
 }
-
 
 /* Tarjetas */
 .card-list {
@@ -123,19 +89,18 @@
 .card {
   background: #f3f0f9;
   color: #2e1437;
-  border: 4px solid #8a2be2; /* Índigo brillante */
-  border-radius: 12px;        /* Bordes redondeados opcionales */
-  box-shadow: 0 0 20px 6px rgba(138, 43, 226, 0.6); /* Efecto luminoso */
+  border: 4px solid #8a2be2;
+  border-radius: 12px;
+  box-shadow: 0 0 20px 6px rgba(138, 43, 226, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 220px;
   padding: 1rem;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.4s ease, background-color 0.4s ease;
   font-family: 'Georgia', serif;
 }
 
 .card:hover {
-  background-color: rgb(35, 0, 70); /* Indigo metálico más oscuro */
+  background-color: rgb(35, 0, 70);
   color: white;
   border: 1px solid rgb(110, 90, 190);
   box-shadow:
@@ -174,4 +139,45 @@
 .home-footer a:hover {
   text-decoration: underline;
   color: #fff1fb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner {
+    position: relative;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .banner-logo {
+    width: 100%;
+    max-width: 300px;
+    opacity: 0.4;
+  }
+
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* mejora la visibilidad sobre la imagen */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    color: white;
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .banner-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .banner-text h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0 0;
+  }
 }

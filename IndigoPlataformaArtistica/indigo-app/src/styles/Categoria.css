@@ -2,11 +2,11 @@
   padding: 2rem;
   min-height: 100vh;
   font-family: 'Georgia', serif;
-  background-image: url("../assets/IndigoLogo.jpg"); /* usa un fondo artístico acorde */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #e8dff5;
+  color: #ece4ff;
+  background-color: #100022;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -16,17 +16,17 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(20, 14, 40, 0.7); /* velo místico violeta */
-  backdrop-filter: blur(4px);
+  background: rgba(25, 0, 50, 0.6); /* velo más elegante */
+  backdrop-filter: blur(6px);
   z-index: -1;
 }
 
 .categoria-container h1 {
   font-size: 3.8rem;
-  color: #d4bfff;
+  color: #e0d0ff;
   text-shadow:
-    0 0 4px #5e548e,
-    0 0 10px #9f86c0;
+    0 0 4px #8c6cc2,
+    0 0 12px #c5aaff;
   margin-bottom: 2.5rem;
   letter-spacing: 1px;
   font-family: 'Playfair Display', serif;
@@ -40,51 +40,51 @@
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.07);
-  border: 2px solid #a489c8;
+  background-color: rgba(29, 12, 89, 0.85);
+  border: 1.5px solid #c3a7f0;
   border-radius: 1rem;
   width: 260px;
   padding: 1rem;
   text-decoration: none;
   color: #f2e9f7;
-  box-shadow: 0 4px 10px rgba(80, 70, 120, 0.3);
+  box-shadow: 0 4px 10px rgba(60, 0, 100, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   backdrop-filter: blur(3px);
 }
 
 .card:hover {
-  background: linear-gradient(145deg, #2c1a47, #3c2163);
+  background: linear-gradient(135deg, #3c2163, #5e379c);
   color: white;
-  border: 1px solid #9b79d3;
+  border: 1.5px solid #d2b7ff;
   box-shadow:
-    0 0 12px rgba(139, 111, 202, 0.6),
+    0 0 14px rgba(139, 111, 202, 0.7),
     inset 0 0 10px rgba(255, 255, 255, 0.03),
-    inset 0 0 20px rgba(180, 150, 255, 0.06),
-    0 6px 12px rgba(0, 0, 0, 0.3);
+    inset 0 0 20px rgba(255, 230, 255, 0.08),
+    0 6px 14px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
 }
 
-
 .card img {
   width: 100%;
-  height: 140px;
+  height: 160px;
   object-fit: cover;
   border-radius: 0.75rem;
   margin-bottom: 0.75rem;
   border: 1px solid #d8c4f7;
+  background: transparent;
 }
 
 .card h3 {
   font-size: 1.3rem;
   margin: 0.5rem 0;
-  color: #dfd0f4;
+  color: #efdcff;
   font-weight: bold;
   font-family: 'Georgia', serif;
 }
 
 .card p {
   font-size: 0.95rem;
-  color: #c7b0f3;
+  color: #d8c6f8;
   line-height: 1.4;
 }
 
@@ -96,17 +96,17 @@
 }
 
 .nav-button {
-  background-color: #6a4caf;
+  background-color: #7e5ac9;
   color: #f8f1ff;
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  border: 2px solid #d2b7ff;
+  border: 2px solid #dfc9ff;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-button:hover {
-  background-color: #4c2e91;
+  background-color: #5c3aa5;
   transform: scale(1.05);
 }
