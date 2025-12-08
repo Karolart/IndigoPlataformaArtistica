@@ -1,4 +1,4 @@
-![Indigo Plataforma Artística Banner]([https://drive.google.com/file/d/1QHEpTUWPu2eed6HKYFPNjUwmISjqjTZX/view?usp=sharing](https://raw.githubusercontent.com/Karolart/KarolDiazPortfolio/refs/heads/main/Karol-portfolio/FrontEnd/public/indigoBanner..png))
+![Indigo Plataforma Artística Banner](https://raw.githubusercontent.com/Karolart/KarolDiazPortfolio/refs/heads/main/Karol-portfolio/FrontEnd/public/indigoBanner..png)
 
 # 🎨 Indigo Plataforma Artística  
 *A digital space that connects artists, creators, and cultural entrepreneurs from Medellín and beyond.*
